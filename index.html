@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Live Dot Edition</title>
+    <title>JoyTG VIP Hack - Perfect Center Layout</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -181,27 +181,26 @@
             box-shadow: 0 0 8px #ef4444;
         }
 
-        /* 🎯 গোল্ডেন বক্সের ভেতরে পারফেক্ট সেন্টারে ও নিচে নামানো প্রেডিকশন এরিয়া */
+        /* 🎯 গোল্ডেন বক্সের ভেতরে ১০০% নিখুঁত সেন্টারে পজিশন করা এরিয়া */
         .center-prediction-area {
             position: absolute;
-            top: 74px;
-            right: 16px;
-            width: 122px;
-            height: 80px;
+            top: 65px;
+            right: 12px;
+            width: 130px;
+            height: 95px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3px;
+            gap: 4px;
             z-index: 10;
         }
 
-        /* পিরিয়ড নাম্বারের কন্টেইনার এবং লাইভ ডট */
+        /* পিরিয়ড নাম্বারের কন্টেইনার (P এবং লাইভ ডট একত্রে বামপাশে) */
         .period-container {
             display: flex;
             align-items: center;
-            gap: 4px;
-            position: relative;
+            gap: 5px;
         }
 
         .period-display {
@@ -212,10 +211,10 @@
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
         }
 
-        /* P এর নিচে ছোট্ট লাইভ ডট অ্যানিমেশন */
+        /* 'P' এর ঠিক পাশেই ছোট্ট লাইভ ডট অ্যানিমেশন */
         .live-dot {
-            width: 5px;
-            height: 5px;
+            width: 4.5px;
+            height: 4.5px;
             background-color: #22c55e;
             border-radius: 50%;
             box-shadow: 0 0 6px #22c55e;
@@ -229,29 +228,27 @@
 
         /* এক রঙের সোজা ও মোটা BIG / SMALL টেক্সট */
         .solid-big-small {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 900;
             color: #ffd700;
             letter-spacing: 1.5px;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 215, 0, 0.8);
             line-height: 1;
-            margin-top: 2px;
         }
 
         /* অফিশিয়াল গেম ব্যাজ (সিঙ্গেল নাম্বার) */
         .official-num-badge {
-            width: 22px;
-            height: 22px;
+            width: 21px;
+            height: 21px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 900;
             color: #ffffff;
             text-shadow: 1px 1px 2px #000;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-            margin-top: 2px;
         }
 
         /* অফিশিয়াল কালার রুল */
@@ -333,7 +330,7 @@
             <!-- ব্যাকগ্রাউন্ড ইমেজ -->
             <img src="https://imagepaste.org/i/m42m4vdv.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- গোল্ডেন ফ্রেমে মাঝখানে ও নিচে নামানো সিগন্যাল ও পিরিয়ড সহ লাইভ ডট -->
+            <!-- গোল্ডেন ফ্রেমে একদম নিখুঁত সেন্টারে পজিশন করা এরিয়া -->
             <div class="center-prediction-area">
                 <div class="period-container">
                     <div class="period-display" id="period-num">P 2026111130542</div>
@@ -424,7 +421,7 @@
                 sizeEl.style.fontSize = "11px";
                 numEl.style.display = "none";
             } else {
-                sizeEl.style.fontSize = "20px";
+                sizeEl.style.fontSize = "19px";
                 
                 let seed = periodIndex * 13;
                 let isBig = (seed % 100) > 42; 
