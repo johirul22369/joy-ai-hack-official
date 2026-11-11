@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Perfect Period Edition</title>
+    <title>JoyTG VIP Hack - Lion Popup Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -131,28 +131,35 @@
             font-weight: 700;
         }
 
-        /* মূল পপআপ উইন্ডো */
+        /* মূল পপআপ উইন্ডো (ইমেজ ব্যাকগ্রাউন্ড) */
         .overlay-box {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 320px;
-            background: #080b11;
-            border: 2px solid #ffcc00;
-            border-radius: 18px;
-            box-shadow: 0 0 35px rgba(255, 204, 0, 0.8);
-            padding: 12px;
+            width: 310px;
             display: none;
             z-index: 9999;
             touch-action: none;
             text-align: center;
         }
 
+        .popup-relative-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .popup-main-bg-img {
+            width: 100%;
+            display: block;
+            filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
+            pointer-events: none;
+        }
+
         .close-btn {
             position: absolute;
-            top: 8px;
-            right: 12px;
+            top: 4px;
+            right: 14px;
             background: #ef4444;
             color: white;
             border: none;
@@ -169,104 +176,59 @@
             box-shadow: 0 0 8px #ef4444;
         }
 
-        /* ব্র্যান্ডের নাম (JoyTG) */
-        .brand-title {
-            font-size: 11px;
+        /* ব্র্যান্ডের নাম (JoyTG) - একদম ওপরের ব্যানারে সেন্টারে */
+        .brand-header-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10.5px;
             font-weight: 900;
-            color: #ffcc00;
-            letter-spacing: 0.8px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            text-shadow: 0 0 5px rgba(255, 204, 0, 0.6);
+            color: #ffd700;
+            white-space: nowrap;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.9), 0 0 4px #ffd700;
+            z-index: 10;
         }
 
-        /* গ্রিড লেআউট */
-        .popup-content-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        /* বামপাশে অ্যানিমেটেড রিয়েল লায়ন বক্স */
-        .lion-art-box {
-            width: 140px;
-            height: 120px;
-            background: #020305;
-            border: 1.5px solid #ff9900;
-            border-radius: 14px;
-            box-shadow: inset 0 0 10px rgba(255, 153, 0, 0.4);
+        /* 🎯 ডানপাশের গোল্ডেন খালি বক্সের একদম মাঝখানে পজিশন করা প্রেডিকশন এরিয়া */
+        .center-prediction-area {
+            position: absolute;
+            top: 75px;
+            right: 18px;
+            width: 125px;
+            height: 75px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
+            z-index: 10;
         }
 
-        .animated-lion {
-            width: 65px;
-            height: 65px;
-            background-image: url('https://media.giphy.com/media/l4KTh9s6yN2vN6pPi/giphy.gif');
-            background-size: cover;
-            background-position: center;
-            animation: lionWalkMotion 3s ease-in-out infinite alternate;
-            filter: drop-shadow(0 0 6px #ff6600);
-        }
-
-        @keyframes lionWalkMotion {
-            0% { transform: translateX(-5px) scale(1); }
-            50% { transform: translateX(5px) scale(1.05); }
-            100% { transform: translateX(-5px) scale(1); }
-        }
-
-        .lion-badge-text {
-            font-size: 8.5px;
-            font-weight: 900;
-            color: #ff9900;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
-        }
-
-        /* ডানের প্রেডিকশন বক্স */
-        .prediction-box-right {
-            width: 145px;
-            height: 120px;
-            background: #020305;
-            border: 1.5px solid #ffcc00;
-            border-radius: 14px;
-            box-shadow: inset 0 0 10px rgba(255, 204, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 4px;
-        }
-
+        /* পিরিয়ড নাম্বার (সঠিক রানিং অ্যাক্টিভ পিরিয়ড) */
         .period-display {
             font-size: 7.5px;
             font-weight: 900;
             color: #38bdf8;
-            letter-spacing: 0.3px;
-            margin-bottom: 4px;
+            letter-spacing: 0.4px;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+            margin-bottom: 2px;
         }
 
-        /* এক রঙের মোটা BIG / SMALL টেক্সট */
+        /* এক রঙের সোজা ও মোটা BIG / SMALL টেক্সট */
         .solid-big-small {
             font-size: 20px;
             font-weight: 900;
-            color: #ffcc00;
+            color: #ffd700;
             letter-spacing: 1.5px;
-            line-height: 1.1;
-            margin-bottom: 6px;
-            text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 215, 0, 0.8);
+            line-height: 1;
+            margin-bottom: 4px;
         }
 
-        /* অফিশিয়াল কালার রুলযুক্ত সিঙ্গেল ব্যাজ */
+        /* অফিশিয়াল গেম ব্যাজ (একটিমাত্র সিঙ্গেল নাম্বার) */
         .official-num-badge {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -274,18 +236,22 @@
             font-size: 11px;
             font-weight: 900;
             color: #ffffff;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+            text-shadow: 1px 1px 2px #000;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
         }
 
+        /* অফিশিয়াল কালার রুল */
         .bg-red { background: linear-gradient(135deg, #ef4444, #991b1b); border: 1.5px solid #fca5a5; }
         .bg-green { background: linear-gradient(135deg, #22c55e, #15803d); border: 1.5px solid #86efac; }
         .bg-violet { background: linear-gradient(135deg, #a855f7, #6b21a8); border: 1.5px solid #d8b4fe; }
 
-        /* বাটন সেকশন */
+        /* নিচের বাটন ও টেলিগ্রাম লিংক */
         .bottom-action-bar {
+            margin-top: 6px;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 5px;
+            padding: 0 8px;
         }
 
         .button-row {
@@ -296,24 +262,26 @@
         .action-btn {
             flex: 1;
             background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #ffcc00;
-            color: #ffcc00;
+            border: 1px solid #ffd700;
+            color: #ffd700;
             border-radius: 12px;
-            padding: 6px 0;
-            font-size: 9px;
+            padding: 5px 0;
+            font-size: 8.5px;
             font-weight: 900;
             cursor: pointer;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.3);
         }
 
         .telegram-join-btn {
-            background: linear-gradient(135deg, #ffcc00, #b8860b);
+            background: linear-gradient(135deg, #ffd700, #b8860b);
             color: #000;
             border-radius: 14px;
-            padding: 8px 0;
-            font-size: 10px;
+            padding: 7px 0;
+            font-size: 9.5px;
             font-weight: 900;
             text-decoration: none;
             letter-spacing: 0.8px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -342,23 +310,19 @@
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- মূল পপআপ উইন্ডো -->
+    <!-- মূল পপআপ উইন্ডো (সিংহ থিম ব্যাকগ্রাউন্ড ইমেজ সহ) -->
     <div class="overlay-box" id="main-content">
-        <button class="close-btn" onclick="hidePopup()">×</button>
+        <div class="popup-relative-wrapper">
+            <button class="close-btn" onclick="hidePopup()">×</button>
 
-        <!-- ব্র্যান্ড নেম (JoyTG) -->
-        <div class="brand-title">👑 OWNER OF JoyTG 【2x™】</div>
+            <!-- ব্র্যান্ড নেম (JoyTG) -->
+            <div class="brand-header-title">👑 OWNER OF JoyTG 【2x™】</div>
 
-        <!-- কন্টেন্ট গ্রিড -->
-        <div class="popup-content-grid">
-            <!-- বামে অ্যানিমেটেড রিয়েল লায়ন ওয়াকিং বক্স -->
-            <div class="lion-art-box">
-                <div class="animated-lion"></div>
-                <div class="lion-badge-text">LIVE LION VIP</div>
-            </div>
+            <!-- তোর সেই রিমুভড লায়ন পপআপ ইমেজ -->
+            <img src="https://instasize.com/api/image/d38a5aa1b7953099a0fef69d3da5b894c7338dfff0bc83cc7b1c32db0cead6fe.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- ডানে সিগন্যাল বক্স -->
-            <div class="prediction-box-right">
+            <!-- গোল্ডেন বক্সের ভেতরে নিখুঁতভাবে বসানো প্রেডিকশন ও সিঙ্গেল নাম্বার -->
+            <div class="center-prediction-area">
                 <div class="period-display" id="period-num">P 2026111130542</div>
                 <div class="solid-big-small" id="res-size">WAITING...</div>
                 <div class="official-num-badge bg-green" id="official-num" style="display: none;">7</div>
@@ -429,7 +393,7 @@
             const now = new Date();
             const totalSecs = now.getUTCHours() * 3600 + now.getUTCMinutes() * 60 + now.getUTCSeconds();
             
-            // পিরিয়ড ইন্ডেক্স ১ ঘর পেছনে (সঠিক রানিং অ্যাক্টিভ পিরিয়ড দেখানোর জন্য)
+            // রানিং অ্যাক্টিভ পিরিয়ড সঠিক দেখানোর জন্য ১ ঘর পেছনে সেট করা
             let periodIndex = Math.floor(totalSecs / totalDuration) + 500 - 1;
             let dateStr = `${now.getUTCFullYear()}${String(now.getUTCMonth() + 1).padStart(2, '0')}${String(now.getUTCDate()).padStart(2, '0')}`;
             
