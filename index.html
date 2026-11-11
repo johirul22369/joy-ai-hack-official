@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Perfect Center Layout</title>
+    <title>JoyTG VIP Hack - Absolute Center Fixed</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -131,7 +131,7 @@
             font-weight: 700;
         }
 
-        /* মূল পপআপ উইন্ডো (গাঢ় শ্যাডো ও ঝাপসা লুক) */
+        /* মূল পপআপ উইন্ডো */
         .overlay-box {
             position: fixed;
             top: 50%;
@@ -181,26 +181,26 @@
             box-shadow: 0 0 8px #ef4444;
         }
 
-        /* 🎯 গোল্ডেন বক্সের ভেতরে ১০০% নিখুঁত সেন্টারে পজিশন করা এরিয়া */
+        /* 🎯 গোল্ডেন ফ্রেমের ভেতর ১০০% নিশ্চিতভাবে একদম মাঝখানে (সেন্টারে) পজিশন করা এরিয়া */
         .center-prediction-area {
             position: absolute;
-            top: 65px;
+            top: 58px;    /* ওপরের ফিক্সড টপ সাইজ সামঞ্জস্য করা হয়েছে */
             right: 12px;
             width: 130px;
-            height: 95px;
+            height: 92px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 4px;
+            justify-content: center; /* ফ্লেক্সের সাহায্যে একদম লম্বালম্বি সেন্টারে আনা হলো */
+            gap: 5px;
             z-index: 10;
         }
 
-        /* পিরিয়ড নাম্বারের কন্টেইনার (P এবং লাইভ ডট একত্রে বামপাশে) */
+        /* পিরিয়ড নাম্বারের কন্টেইনার এবং লাইভ ডট */
         .period-container {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         .period-display {
@@ -211,7 +211,7 @@
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
         }
 
-        /* 'P' এর ঠিক পাশেই ছোট্ট লাইভ ডট অ্যানিমেশন */
+        /* পিরিয়ড নাম্বারের পাশেই লাইভ ডট */
         .live-dot {
             width: 4.5px;
             height: 4.5px;
@@ -330,7 +330,7 @@
             <!-- ব্যাকগ্রাউন্ড ইমেজ -->
             <img src="https://imagepaste.org/i/m42m4vdv.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- গোল্ডেন ফ্রেমে একদম নিখুঁত সেন্টারে পজিশন করা এরিয়া -->
+            <!-- গোল্ডেন ফ্রেমের ভেতর একদম নিখুঁত মাঝখানে সেন্টারে পজিশন করা এরিয়া -->
             <div class="center-prediction-area">
                 <div class="period-container">
                     <div class="period-display" id="period-num">P 2026111130542</div>
