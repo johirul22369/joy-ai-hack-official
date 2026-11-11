@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Final Fixed Edition</title>
+    <title>JoyTG VIP Hack - Perfect Dark Shadow Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -131,7 +131,7 @@
             font-weight: 700;
         }
 
-        /* 🌟 মূল পপআপ উইন্ডো (শুধু পপআপের মাপে সুন্দর শ্যাডো এবং গেমের টাচ প্রবলেম সলভড) 🌟 */
+        /* 🌟 পপআপের ঠিক পেছনে একদম গাঢ় কালো শ্যাডো ও সামান্য ঝাপসা লুক 🌟 */
         .overlay-box {
             position: fixed;
             top: 50%;
@@ -142,11 +142,12 @@
             z-index: 9999;
             touch-action: none;
             text-align: center;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0, 0, 0, 0.75); /* আরও বেশি গাঢ় কালো */
             border-radius: 20px;
             padding: 6px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 180, 0, 0.4);
-            pointer-events: auto; /* পপআপের ভেতরে টাচ কাজ করবে */
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 180, 0, 0.5);
+            backdrop-filter: blur(4px); /* সামান্য ঝাপসা বা ব্লার এফেক্ট */
+            pointer-events: auto;
         }
 
         .popup-relative-wrapper {
@@ -180,21 +181,22 @@
             box-shadow: 0 0 8px #ef4444;
         }
 
-        /* 🎯 গোল্ডেন ফ্রেমের ভেতর পারফেক্ট সেন্টারে প্রেডিকশন এরিয়া */
+        /* 🎯 গোল্ডেন বক্সের ভেতর পারফেক্ট সেন্টারে ও নিচে নামানো প্রেডিকশন এরিয়া */
         .center-prediction-area {
             position: absolute;
-            top: 70px;
-            right: 18px;
-            width: 120px;
-            height: 80px;
+            top: 74px;    /* ওপর থেকে নিচ বরাবর পারফেক্ট দূরত্ব */
+            right: 16px;   /* ডানপাশের দূরত্ব */
+            width: 122px;  /* গোল্ডেন ফ্রেমের চওড়া মাপ */
+            height: 80px;  /* গোল্ডেন ফ্রেমের উচ্চতা মাপ */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 2px;
+            gap: 3px;      /* উপাদানের মধ্যকার দূরত্ব */
             z-index: 10;
         }
 
+        /* পিরিয়ড নাম্বার */
         .period-display {
             font-size: 7.5px;
             font-weight: 900;
@@ -203,6 +205,7 @@
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
         }
 
+        /* এক রঙের সোজা ও মোটা BIG / SMALL টেক্সট (ওপর থেকে নামানো) */
         .solid-big-small {
             font-size: 20px;
             font-weight: 900;
@@ -210,9 +213,10 @@
             letter-spacing: 1.5px;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 215, 0, 0.8);
             line-height: 1;
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
+        /* অফিশিয়াল গেম ব্যাজ (সিঙ্গেল নাম্বার) */
         .official-num-badge {
             width: 22px;
             height: 22px;
@@ -228,6 +232,7 @@
             margin-top: 2px;
         }
 
+        /* অফিশিয়াল কালার রুল */
         .bg-red { background: linear-gradient(135deg, #ef4444, #991b1b); border: 1.5px solid #fca5a5; }
         .bg-green { background: linear-gradient(135deg, #22c55e, #15803d); border: 1.5px solid #86efac; }
         .bg-violet { background: linear-gradient(135deg, #a855f7, #6b21a8); border: 1.5px solid #d8b4fe; }
@@ -306,7 +311,7 @@
             <!-- ব্যাকগ্রাউন্ড ইমেজ -->
             <img src="https://imagepaste.org/i/m42m4vdv.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- গোল্ডেন ফ্রেমে মাঝখানে বসানো সিগন্যাল ও পিরিয়ড -->
+            <!-- গোল্ডেন ফ্রেমে মাঝখানে ও নিচে নামানো সিগন্যাল ও পিরিয়ড -->
             <div class="center-prediction-area">
                 <div class="period-display" id="period-num">P 2026111130542</div>
                 <div class="solid-big-small" id="res-size">WAITING...</div>
