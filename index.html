@@ -141,12 +141,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 330px;
+            width: 320px;
             display: none;
             z-index: 9999;
             touch-action: none;
             text-align: center;
-            background: rgba(3, 7, 18, 0.92);
+            background: rgba(3, 7, 18, 0.94);
             border-radius: 22px;
             padding: 8px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.98), 0 0 35px rgba(255, 180, 0, 0.6);
@@ -288,42 +288,74 @@
             letter-spacing: 1px;
         }
 
-        /* হিস্ট্রি সেকশন মড্যুল উইথ স্টাইলিশ উইন/লস ট্যাগ */
-        .history-box {
-            margin: 0 6px 6px 6px;
-            background: rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            border-radius: 10px;
-            padding: 6px 10px;
-            max-height: 75px;
-            overflow-y: auto;
-            text-align: left;
+        /* 📜 আলাদা ফ্লোটিং হিস্ট্রি উইন্ডোজ (Dedicated History Modal Window) */
+        #history-modal-window {
+            position: fixed;
+            top: 20%;
+            left: 10%;
+            width: 240px;
+            background: rgba(3, 7, 18, 0.96);
+            border: 2px solid #ffd700;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.5);
+            padding: 8px;
+            display: none; /* শুরুতে অফ থাকবে, হিস্ট্রি বাটনে ক্লিক করলে ওপেন হবে এবং অল-টাইম থাকবে */
+            z-index: 10001;
+            touch-action: none;
+            backdrop-filter: blur(5px);
         }
 
-        .history-title {
-            font-size: 8px;
+        .history-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+            cursor: move;
+        }
+
+        .history-modal-title {
+            font-size: 9px;
             color: #ffd700;
             font-weight: 900;
-            margin-bottom: 3px;
-            text-align: center;
-            border-bottom: 1px dashed rgba(255, 215, 0, 0.3);
-            padding-bottom: 2px;
             letter-spacing: 0.5px;
         }
 
-        .history-list {
+        .history-modal-close {
+            background: #ef4444;
+            color: white;
+            border: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            font-size: 9px;
+            font-weight: 900;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .history-modal-body {
+            max-height: 140px;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 4px;
         }
 
         .history-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 7.5px;
+            font-size: 8px;
             color: #e2e8f0;
             font-weight: 800;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 3px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .tag-win {
@@ -346,7 +378,7 @@
 
         /* নিচের বাটন সেকশন */
         .bottom-action-bar {
-            margin-top: 2px;
+            margin-top: 4px;
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -453,22 +485,25 @@
             ⚡ WinGo 30SEC MARKET ⚡
         </div>
 
-        <!-- হ্যাকার হিস্ট্রি প্যানেল উইথ রিয়েল উইন/লস ট্যাগ -->
-        <div class="history-box">
-            <div class="history-title">🤖 HACKER LIVE HISTORY & RESULT</div>
-            <div class="history-list" id="history-container">
-                <div class="history-item"><span>Loading history...</span></div>
-            </div>
-        </div>
-
         <div class="bottom-action-bar">
             <div class="button-row">
-                <button class="action-btn" onclick="updateHistoryView()">📜 HISTORY</button>
+                <button class="action-btn" onclick="toggleHistoryModalWindow()">📜 HISTORY</button>
                 <button class="action-btn" onclick="hidePopup()">HIDE</button>
             </div>
             <a href="https://t.me/BDT588" target="_blank" class="telegram-join-btn">
                 ⚡ JOIN TELEGRAM ⚡
             </a>
+        </div>
+    </div>
+
+    <!-- 🌟 আলাদা ছোট ফ্লোটিং হিস্ট্রি উইন্ডোজ (অল-টাইম দৃশ্যমান প্যানেল) -->
+    <div id="history-modal-window">
+        <div class="history-modal-header" id="history-header">
+            <span class="history-modal-title">🤖 HACKER LIVE HISTORY</span>
+            <button class="history-modal-close" onclick="toggleHistoryModalWindow()">×</button>
+        </div>
+        <div class="history-modal-body" id="history-container">
+            <div class="history-item"><span>Waiting for rounds...</span></div>
         </div>
     </div>
 
@@ -510,6 +545,17 @@
         function hidePopup() {
             document.getElementById('main-content').style.display = 'none';
             document.getElementById('floating-icon-btn').style.display = 'flex';
+        }
+
+        // আলাদা হিস্ট্রি উইন্ডো ওপেন/ক্লোজ করার টগল ফাংশন
+        function toggleHistoryModalWindow() {
+            let win = document.getElementById('history-modal-window');
+            if (win.style.display === 'block') {
+                win.style.display = 'none';
+            } else {
+                win.style.display = 'block';
+                updateHistoryView();
+            }
         }
 
         function startPeriodGenerator() {
@@ -554,11 +600,9 @@
             let numEl = document.getElementById('official-num');
             let elapsedSec = elapsedInPeriod + 1; 
 
-            // পিরিয়ড চেঞ্জ হলে নতুন সিগন্যাল লক করে দেওয়া (যাতে প্রতি সেকেন্ডে চেঞ্জ না হয়)
             if (fullPeriod !== cachedPeriod) {
-                // আগের পিরিয়ড শেষ হলে সেটার ফলাফল হিস্ট্রিতে পারফেক্ট উইন/লস হিসেবে ফাইনাল করা
                 if (cachedPeriod !== "") {
-                    let actualMarketNum = Math.floor(Math.random() * 10); // রিয়েল মার্কেট সিমুলেটেড আউটকাম
+                    let actualMarketNum = Math.floor(Math.random() * 10); 
                     let actualMarketSize = actualMarketNum >= 5 ? "BIG" : "SMALL";
                     let isWin = (cachedPrediction.type === actualMarketSize);
 
@@ -568,7 +612,7 @@
                         num: cachedPrediction.num,
                         status: isWin ? "WIN" : "LOSS"
                     });
-                    if (hackHistory.length > 5) hackHistory.pop();
+                    if (hackHistory.length > 10) hackHistory.pop(); // আরও বেশি হিস্ট্রি সেভ থাকবে (সর্বোচ্চ ১০টি)
                     updateHistoryView();
                 }
 
@@ -588,7 +632,6 @@
                 cachedPrediction = { type: predType, num: luckyNum };
             }
 
-            // টাইমিং লজিক: শেষের ২ সেকেন্ডে (২৯ ও ৩০ সেকেন্ডে) WAITING দেখাবে, বাকি সময় ফিক্সড সিগন্যাল রানিং থাকবে
             if (elapsedSec >= 29) {
                 sizeEl.innerText = "WAITING...";
                 sizeEl.style.fontSize = "11.5px";
@@ -623,7 +666,7 @@
             hackHistory.forEach(item => {
                 let statusTag = item.status === "WIN" ? `<span class="tag-win">WIN</span>` : `<span class="tag-loss">LOSS</span>`;
                 htmlStr += `<div class="history-item">
-                    <span>#${item.period} (${item.res})</span>
+                    <span>#${item.period} (${item.res} - ${item.num})</span>
                     ${statusTag}
                 </div>`;
             });
@@ -632,11 +675,14 @@
 
         makeDraggable(document.getElementById("floating-icon-btn"));
         makeDraggable(document.getElementById("main-content"));
+        makeDraggable(document.getElementById("history-modal-window")); // হিস্ট্রি উইন্ডোটিকেও ড্র্যাগ করে যেকোনো জায়গায় সরানো যাবে!
 
         function makeDraggable(elmnt) {
             let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            elmnt.onmousedown = dragMouseDown;
-            elmnt.ontouchstart = dragMouseDown;
+            let header = document.getElementById(elmnt.id + "-header") || elmnt;
+            
+            header.onmousedown = dragMouseDown;
+            header.ontouchstart = dragMouseDown;
 
             function dragMouseDown(e) {
                 e = e || window.event;
