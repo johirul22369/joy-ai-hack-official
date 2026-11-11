@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Lion Popup Edition</title>
+    <title>JoyTG VIP Hack - Perfect Centered Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -176,7 +176,7 @@
             box-shadow: 0 0 8px #ef4444;
         }
 
-        /* ব্র্যান্ডের নাম (JoyTG) - একদম ওপরের ব্যানারে সেন্টারে */
+        /* ব্র্যান্ডের নাম (JoyTG) */
         .brand-header-title {
             position: absolute;
             top: 10px;
@@ -190,42 +190,41 @@
             z-index: 10;
         }
 
-        /* 🎯 ডানপাশের গোল্ডেন খালি বক্সের একদম মাঝখানে পজিশন করা প্রেডিকশন এরিয়া */
+        /* 🎯 গোল্ডেন বক্সের ভেতর টেক্সট একদম পারফেক্ট সেন্টারে রাখার লেআউট */
         .center-prediction-area {
             position: absolute;
-            top: 75px;
-            right: 18px;
-            width: 125px;
-            height: 75px;
+            top: 66px;   /* ওপর-নিচ পজিশন ঠিক করা হলো */
+            right: 15px;  /* ডানপাশের দূরত্ব */
+            width: 128px; /* বক্সের চওড়া ম্যাপ */
+            height: 85px; /* বক্সের উচ্চতা ম্যাপ */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* ফ্লেক্সের মাধ্যমে সবকিছু একদম মাঝখানে আনা হয়েছে */
+            gap: 4px;     /* উপাদানগুলোর মাঝের দূরত্ব সমান রাখা হয়েছে */
             z-index: 10;
         }
 
-        /* পিরিয়ড নাম্বার (সঠিক রানিং অ্যাক্টিভ পিরিয়ড) */
+        /* পিরিয়ড নাম্বার */
         .period-display {
             font-size: 7.5px;
             font-weight: 900;
             color: #38bdf8;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.3px;
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
-            margin-bottom: 2px;
         }
 
         /* এক রঙের সোজা ও মোটা BIG / SMALL টেক্সট */
         .solid-big-small {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 900;
             color: #ffd700;
             letter-spacing: 1.5px;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 215, 0, 0.8);
             line-height: 1;
-            margin-bottom: 4px;
         }
 
-        /* অফিশিয়াল গেম ব্যাজ (একটিমাত্র সিঙ্গেল নাম্বার) */
+        /* অফিশিয়াল গেম ব্যাজ (সিঙ্গেল নাম্বার) */
         .official-num-badge {
             width: 22px;
             height: 22px;
@@ -310,7 +309,7 @@
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- মূল পপআপ উইন্ডো (সিংহ থিম ব্যাকগ্রাউন্ড ইমেজ সহ) -->
+    <!-- মূল পপআপ উইন্ডো -->
     <div class="overlay-box" id="main-content">
         <div class="popup-relative-wrapper">
             <button class="close-btn" onclick="hidePopup()">×</button>
@@ -318,10 +317,10 @@
             <!-- ব্র্যান্ড নেম (JoyTG) -->
             <div class="brand-header-title">👑 OWNER OF JoyTG 【2x™】</div>
 
-            <!-- তোর সেই রিমুভড লায়ন পপআপ ইমেজ -->
+            <!-- লায়ন পপআপ ইমেজ -->
             <img src="https://instasize.com/api/image/d38a5aa1b7953099a0fef69d3da5b894c7338dfff0bc83cc7b1c32db0cead6fe.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- গোল্ডেন বক্সের ভেতরে নিখুঁতভাবে বসানো প্রেডিকশন ও সিঙ্গেল নাম্বার -->
+            <!-- গোল্ডেন বক্সের ভেতরে একদম পারফেক্ট সেন্টারে পজিশন করা এরিয়া -->
             <div class="center-prediction-area">
                 <div class="period-display" id="period-num">P 2026111130542</div>
                 <div class="solid-big-small" id="res-size">WAITING...</div>
@@ -393,7 +392,6 @@
             const now = new Date();
             const totalSecs = now.getUTCHours() * 3600 + now.getUTCMinutes() * 60 + now.getUTCSeconds();
             
-            // রানিং অ্যাক্টিভ পিরিয়ড সঠিক দেখানোর জন্য ১ ঘর পেছনে সেট করা
             let periodIndex = Math.floor(totalSecs / totalDuration) + 500 - 1;
             let dateStr = `${now.getUTCFullYear()}${String(now.getUTCMonth() + 1).padStart(2, '0')}${String(now.getUTCDate()).padStart(2, '0')}`;
             
@@ -407,10 +405,10 @@
 
             if (timeLeft >= 28) {
                 sizeEl.innerText = "WAITING...";
-                sizeEl.style.fontSize = "12px";
+                sizeEl.style.fontSize = "11px";
                 numEl.style.display = "none";
             } else {
-                sizeEl.style.fontSize = "20px";
+                sizeEl.style.fontSize = "19px";
                 
                 let seed = periodIndex * 13;
                 let isBig = (seed % 100) > 42; 
@@ -438,6 +436,9 @@
                 numEl.style.display = "flex";
             }
         }
+
+        makeDraggable(document.getElementById("floating-icon-btn"));
+        makeDraggable(document.getElementById("main-content"));
 
         makeDraggable(document.getElementById("floating-icon-btn"));
         makeDraggable(document.getElementById("main-content"));
