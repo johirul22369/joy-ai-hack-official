@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Perfect Centered Edition</title>
+    <title>JoyTG VIP Hack - New Popup Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -131,7 +131,7 @@
             font-weight: 700;
         }
 
-        /* মূল পপআপ উইন্ডো (ইমেজ ব্যাকগ্রাউন্ড) */
+        /* মূল পপআপ উইন্ডো */
         .overlay-box {
             position: fixed;
             top: 50%;
@@ -193,15 +193,15 @@
         /* 🎯 গোল্ডেন বক্সের ভেতর টেক্সট একদম পারফেক্ট সেন্টারে রাখার লেআউট */
         .center-prediction-area {
             position: absolute;
-            top: 66px;   /* ওপর-নিচ পজিশন ঠিক করা হলো */
-            right: 15px;  /* ডানপাশের দূরত্ব */
-            width: 128px; /* বক্সের চওড়া ম্যাপ */
-            height: 85px; /* বক্সের উচ্চতা ম্যাপ */
+            top: 66px;
+            right: 15px;
+            width: 128px;
+            height: 85px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* ফ্লেক্সের মাধ্যমে সবকিছু একদম মাঝখানে আনা হয়েছে */
-            gap: 4px;     /* উপাদানগুলোর মাঝের দূরত্ব সমান রাখা হয়েছে */
+            justify-content: center;
+            gap: 4px;
             z-index: 10;
         }
 
@@ -309,7 +309,7 @@
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- মূল পপআপ উইন্ডো -->
+    <!-- মূল পপআপ উইন্ডো (নতুন ব্যাকগ্রাউন্ড ইমেজ সহ) -->
     <div class="overlay-box" id="main-content">
         <div class="popup-relative-wrapper">
             <button class="close-btn" onclick="hidePopup()">×</button>
@@ -317,10 +317,10 @@
             <!-- ব্র্যান্ড নেম (JoyTG) -->
             <div class="brand-header-title">👑 OWNER OF JoyTG 【2x™】</div>
 
-            <!-- লায়ন পপআপ ইমেজ -->
-            <img src="https://instasize.com/api/image/d38a5aa1b7953099a0fef69d3da5b894c7338dfff0bc83cc7b1c32db0cead6fe.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
+            <!-- তোর নতুন দেওয়া পপআপ ইমেজ লিংক -->
+            <img src="https://imagepaste.org/i/m42m4vdv.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- গোল্ডেন বক্সের ভেতরে একদম পারফেক্ট সেন্টারে পজিশন করা এরিয়া -->
+            <!-- গোল্ডেন বক্সের ভেতরে পারফেক্ট সেন্টারে পজিশন করা এরিয়া -->
             <div class="center-prediction-area">
                 <div class="period-display" id="period-num">P 2026111130542</div>
                 <div class="solid-big-small" id="res-size">WAITING...</div>
@@ -436,9 +436,6 @@
                 numEl.style.display = "flex";
             }
         }
-
-        makeDraggable(document.getElementById("floating-icon-btn"));
-        makeDraggable(document.getElementById("main-content"));
 
         makeDraggable(document.getElementById("floating-icon-btn"));
         makeDraggable(document.getElementById("main-content"));
