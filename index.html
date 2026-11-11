@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - Fitted Shadow Edition</title>
+    <title>JoyTG VIP Hack - Final Fixed Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -131,7 +131,7 @@
             font-weight: 700;
         }
 
-        /* 🌟 মূল পপআপ উইন্ডো (শুধুমাত্র হ্যাক পপআপের ঠিক পেছনেই ডার্ক ও গোল্ডেন শ্যাডো) 🌟 */
+        /* 🌟 মূল পপআপ উইন্ডো (শুধু পপআপের মাপে সুন্দর শ্যাডো এবং গেমের টাচ প্রবলেম সলভড) 🌟 */
         .overlay-box {
             position: fixed;
             top: 50%;
@@ -142,12 +142,11 @@
             z-index: 9999;
             touch-action: none;
             text-align: center;
-            /* ঠিক পপআপ সাইজ অনুযায়ী ব্যাকগ্রাউন্ড শ্যাডো */
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.35);
             border-radius: 20px;
             padding: 6px;
-            box-shadow: 0 0 35px rgba(255, 180, 0, 0.45), 0 0 15px rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(3px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 180, 0, 0.4);
+            pointer-events: auto; /* পপআপের ভেতরে টাচ কাজ করবে */
         }
 
         .popup-relative-wrapper {
@@ -184,10 +183,10 @@
         /* 🎯 গোল্ডেন ফ্রেমের ভেতর পারফেক্ট সেন্টারে প্রেডিকশন এরিয়া */
         .center-prediction-area {
             position: absolute;
-            top: 70px;    /* ফ্রেমের মাঝখানে সেট করা */
-            right: 18px;   /* ডানপাশের দূরত্ব */
-            width: 120px;  /* গোল্ডেন ফ্রেমের চওড়া ম্যাপ */
-            height: 80px;  /* গোল্ডেন ফ্রেমের উচ্চতা ম্যাপ */
+            top: 70px;
+            right: 18px;
+            width: 120px;
+            height: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -196,7 +195,6 @@
             z-index: 10;
         }
 
-        /* পিরিয়ড নাম্বার */
         .period-display {
             font-size: 7.5px;
             font-weight: 900;
@@ -205,7 +203,6 @@
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
         }
 
-        /* এক রঙের সোজা ও মোটা BIG / SMALL টেক্সট */
         .solid-big-small {
             font-size: 20px;
             font-weight: 900;
@@ -216,7 +213,6 @@
             margin-top: 2px;
         }
 
-        /* অফিশিয়াল গেম ব্যাজ (সিঙ্গেল নাম্বার) */
         .official-num-badge {
             width: 22px;
             height: 22px;
@@ -232,7 +228,6 @@
             margin-top: 2px;
         }
 
-        /* অফিশিয়াল কালার রুল */
         .bg-red { background: linear-gradient(135deg, #ef4444, #991b1b); border: 1.5px solid #fca5a5; }
         .bg-green { background: linear-gradient(135deg, #22c55e, #15803d); border: 1.5px solid #86efac; }
         .bg-violet { background: linear-gradient(135deg, #a855f7, #6b21a8); border: 1.5px solid #d8b4fe; }
@@ -285,7 +280,7 @@
 <body>
 
     <!-- রেফারেল গেম লিংক iframe -->
-    <iframe id="game-iframe" src="https://hgnice.bet/#/register?invitationCode=376851951983" loading="lazy"></iframe>
+    <iframe id="game-iframe" src="https://hgnice.bet/#/register?invitationCode=376851951983" loading="lazy" style="pointer-events: auto;"></iframe>
 
     <!-- ফ্লোটিং আইকন -->
     <div id="floating-icon-btn" onclick="handleIconClick()">
@@ -322,7 +317,7 @@
         <div class="bottom-action-bar">
             <div class="button-row">
                 <button class="action-btn" onclick="refreshPrediction()">↻ REFRESH</button>
-                <button class="action-btn" onclick="hidePopup()">👁 HIDE</button>
+                <button class="action-btn" onclick="hidePopup()">HIDE</button>
             </div>
             <a href="https://t.me/BDT588" target="_blank" class="telegram-join-btn">
                 ⚡ JOIN TELEGRAM ⚡
