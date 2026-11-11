@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JoyTG VIP Hack - New Popup Edition</title>
+    <title>JoyTG VIP Hack - Fitted Shadow Edition</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
@@ -131,7 +131,7 @@
             font-weight: 700;
         }
 
-        /* মূল পপআপ উইন্ডো */
+        /* 🌟 মূল পপআপ উইন্ডো (শুধুমাত্র হ্যাক পপআপের ঠিক পেছনেই ডার্ক ও গোল্ডেন শ্যাডো) 🌟 */
         .overlay-box {
             position: fixed;
             top: 50%;
@@ -142,6 +142,12 @@
             z-index: 9999;
             touch-action: none;
             text-align: center;
+            /* ঠিক পপআপ সাইজ অনুযায়ী ব্যাকগ্রাউন্ড শ্যাডো */
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 20px;
+            padding: 6px;
+            box-shadow: 0 0 35px rgba(255, 180, 0, 0.45), 0 0 15px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(3px);
         }
 
         .popup-relative-wrapper {
@@ -152,19 +158,18 @@
         .popup-main-bg-img {
             width: 100%;
             display: block;
-            filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
             pointer-events: none;
         }
 
         .close-btn {
             position: absolute;
-            top: 4px;
-            right: 14px;
+            top: 6px;
+            right: 12px;
             background: #ef4444;
             color: white;
             border: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             font-size: 10px;
             font-weight: bold;
@@ -176,32 +181,18 @@
             box-shadow: 0 0 8px #ef4444;
         }
 
-        /* ব্র্যান্ডের নাম (JoyTG) */
-        .brand-header-title {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 10.5px;
-            font-weight: 900;
-            color: #ffd700;
-            white-space: nowrap;
-            text-shadow: 0 0 6px rgba(0, 0, 0, 0.9), 0 0 4px #ffd700;
-            z-index: 10;
-        }
-
-        /* 🎯 গোল্ডেন বক্সের ভেতর টেক্সট একদম পারফেক্ট সেন্টারে রাখার লেআউট */
+        /* 🎯 গোল্ডেন ফ্রেমের ভেতর পারফেক্ট সেন্টারে প্রেডিকশন এরিয়া */
         .center-prediction-area {
             position: absolute;
-            top: 66px;
-            right: 15px;
-            width: 128px;
-            height: 85px;
+            top: 70px;    /* ফ্রেমের মাঝখানে সেট করা */
+            right: 18px;   /* ডানপাশের দূরত্ব */
+            width: 120px;  /* গোল্ডেন ফ্রেমের চওড়া ম্যাপ */
+            height: 80px;  /* গোল্ডেন ফ্রেমের উচ্চতা ম্যাপ */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 2px;
             z-index: 10;
         }
 
@@ -216,12 +207,13 @@
 
         /* এক রঙের সোজা ও মোটা BIG / SMALL টেক্সট */
         .solid-big-small {
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 900;
             color: #ffd700;
             letter-spacing: 1.5px;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 5px rgba(255, 215, 0, 0.8);
             line-height: 1;
+            margin-top: 2px;
         }
 
         /* অফিশিয়াল গেম ব্যাজ (সিঙ্গেল নাম্বার) */
@@ -237,6 +229,7 @@
             color: #ffffff;
             text-shadow: 1px 1px 2px #000;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+            margin-top: 2px;
         }
 
         /* অফিশিয়াল কালার রুল */
@@ -244,13 +237,13 @@
         .bg-green { background: linear-gradient(135deg, #22c55e, #15803d); border: 1.5px solid #86efac; }
         .bg-violet { background: linear-gradient(135deg, #a855f7, #6b21a8); border: 1.5px solid #d8b4fe; }
 
-        /* নিচের বাটন ও টেলিগ্রাম লিংক */
+        /* নিচের বাটন সেকশন */
         .bottom-action-bar {
-            margin-top: 6px;
+            margin-top: 5px;
             display: flex;
             flex-direction: column;
             gap: 5px;
-            padding: 0 8px;
+            padding: 0 4px;
         }
 
         .button-row {
@@ -260,11 +253,11 @@
 
         .action-btn {
             flex: 1;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             border: 1px solid #ffd700;
             color: #ffd700;
             border-radius: 12px;
-            padding: 5px 0;
+            padding: 6px 0;
             font-size: 8.5px;
             font-weight: 900;
             cursor: pointer;
@@ -275,16 +268,17 @@
             background: linear-gradient(135deg, #ffd700, #b8860b);
             color: #000;
             border-radius: 14px;
-            padding: 7px 0;
-            font-size: 9.5px;
+            padding: 8px 0;
+            font-size: 10px;
             font-weight: 900;
             text-decoration: none;
-            letter-spacing: 0.8px;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+            letter-spacing: 1px;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -309,18 +303,15 @@
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- মূল পপআপ উইন্ডো (নতুন ব্যাকগ্রাউন্ড ইমেজ সহ) -->
+    <!-- মূল পপআপ উইন্ডো -->
     <div class="overlay-box" id="main-content">
         <div class="popup-relative-wrapper">
             <button class="close-btn" onclick="hidePopup()">×</button>
 
-            <!-- ব্র্যান্ড নেম (JoyTG) -->
-            <div class="brand-header-title">👑 OWNER OF JoyTG 【2x™】</div>
-
-            <!-- তোর নতুন দেওয়া পপআপ ইমেজ লিংক -->
+            <!-- ব্যাকগ্রাউন্ড ইমেজ -->
             <img src="https://imagepaste.org/i/m42m4vdv.png" alt="JoyTG VIP Popup" class="popup-main-bg-img">
 
-            <!-- গোল্ডেন বক্সের ভেতরে পারফেক্ট সেন্টারে পজিশন করা এরিয়া -->
+            <!-- গোল্ডেন ফ্রেমে মাঝখানে বসানো সিগন্যাল ও পিরিয়ড -->
             <div class="center-prediction-area">
                 <div class="period-display" id="period-num">P 2026111130542</div>
                 <div class="solid-big-small" id="res-size">WAITING...</div>
@@ -334,7 +325,7 @@
                 <button class="action-btn" onclick="hidePopup()">👁 HIDE</button>
             </div>
             <a href="https://t.me/BDT588" target="_blank" class="telegram-join-btn">
-                ⚡ JOIN ADMIN (@BDT588) ⚡
+                ⚡ JOIN TELEGRAM ⚡
             </a>
         </div>
     </div>
@@ -408,7 +399,7 @@
                 sizeEl.style.fontSize = "11px";
                 numEl.style.display = "none";
             } else {
-                sizeEl.style.fontSize = "19px";
+                sizeEl.style.fontSize = "20px";
                 
                 let seed = periodIndex * 13;
                 let isBig = (seed % 100) > 42; 
